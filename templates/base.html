@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AirCargo RealTime</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<nav class="sidebar">
+  <div class="sidebar-brand">
+    <div class="brand-logo">
+      <div class="brand-icon">✈</div>
+      <span class="brand-name">AirCargo RT</span>
+    </div>
+    <div class="brand-sub">Query System</div>
+  </div>
+  <div class="sidebar-nav">
+    <div class="nav-label">Queries</div>
+    <a href="/q1" class="nav-item {% if active == 'q1' %}active{% endif %}">Customers <span class="nav-badge">Q1</span></a>
+    <a href="/q2" class="nav-item {% if active == 'q2' %}active{% endif %}">Booking Schedule <span class="nav-badge">Q2</span></a>
+    <a href="/q3" class="nav-item {% if active == 'q3' %}active{% endif %}">Aged Bookings <span class="nav-badge">Q3</span></a>
+    <a href="/q4" class="nav-item {% if active == 'q4' %}active{% endif %}">Business Value <span class="nav-badge">Q4</span></a>
+    <a href="/q5" class="nav-item {% if active == 'q5' %}active{% endif %}">Tracking Events <span class="nav-badge">Q5</span></a>
+    <a href="/q6" class="nav-item {% if active == 'q6' %}active{% endif %}">Cancellations <span class="nav-badge">Q6</span></a>
+    <a href="/q7" class="nav-item {% if active == 'q7' %}active{% endif %}">ULD Usage <span class="nav-badge">Q7</span></a>
+    <a href="/q8" class="nav-item {% if active == 'q8' %}active{% endif %}">Inactive Customers <span class="nav-badge">Q8</span></a>
+    <a href="/q9" class="nav-item {% if active == 'q9' %}active{% endif %}">Status Trigger <span class="nav-badge">Q9</span></a>
+  </div>
+</nav>
+
+<div class="main">
+  <div class="topbar">
+    <div>
+      <div class="page-title">{{ page_title }}</div>
+      <div class="page-subtitle">{{ page_subtitle }}</div>
+    </div>
+    <div class="topbar-right">
+      <div class="db-badge">
+        <div class="db-dot"></div>
+        airfreight · MySQL 8.4
+      </div>
+    </div>
+  </div>
+  <div class="content">
+    {{ content }}
+  </div>
+</div>
+
+</body>
+</html>
